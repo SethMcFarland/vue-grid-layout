@@ -539,6 +539,7 @@
                         newPosition.top = clientRect.top - parentRect.top;
                         this.dragging = newPosition;
                         this.isDragging = true;
+                        this.$emit("moveStart", this.i);
                         break;
                     }
                     case "dragend": {
@@ -557,6 +558,7 @@
                         this.dragging = null;
                         this.isDragging = false;
                         // shouldUpdate = true;
+                        this.$emit("moveEnd", this.i);
                         break;
                     }
                     case "dragmove": {
