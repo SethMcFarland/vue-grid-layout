@@ -544,6 +544,12 @@
                     }
                     case "dragend": {
                         if (!this.isDragging) return;
+
+                        if(this.$store.getters.getMouseOnTrashcan()) {
+              				this.$emit("deleteItem", this.i);
+              				return;
+            			}
+
                         let parentRect = event.target.offsetParent.getBoundingClientRect();
                         let clientRect = event.target.getBoundingClientRect();
 //                        Add rtl support
