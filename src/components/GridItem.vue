@@ -564,7 +564,7 @@
                         this.dragging = null;
                         this.isDragging = false;
                         // shouldUpdate = true;
-                        this.$emit("moveEnd", this.i);
+                        this.$emit("moveEnd", this.i, newPosition.left);
                         break;
                     }
                     case "dragmove": {
